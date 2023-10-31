@@ -48,4 +48,10 @@ padding: 0 20px 30px;
     margin: auto;
     font-size: 15px;
     text-align: center;
+    display: block;
+    width: 100%;
+}
+.post-container .fecha{
+ font-size: 16px;
+ color: gray;
 }

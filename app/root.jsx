@@ -3,7 +3,10 @@ import {
     Links,
     Outlet,
     Scripts,
-    LiveReload
+    LiveReload,
+    useRouteError,
+    isRouteErrorResponse,
+    Link
 } from '@remix-run/react'
 import styles from '~/styles/index.css'
 import Header from '~/components/header';
@@ -66,3 +69,22 @@ function Document({children}){
         </html>
     )
 }
+/** Error manage */
+export function ErrorBoundary() {
+    const error = useRouteError();
+    return (
+        <Document>
+            
+          <div className="contenedor">
+          <h1 className='error'>
+            {isRouteErrorResponse(error)
+              ? `${error.status} ${error.statusText}`
+              : error instanceof Error
+              ? error.message
+              : "Unknown Error"}
+          </h1>
+          <Link className='error-enlace' to="/">Return to home page</Link>
+          </div>
+        </Document>
+    );
+  }

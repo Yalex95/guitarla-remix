@@ -1,5 +1,5 @@
 import { Response } from "@remix-run/node"
-import { isRouteErrorResponse, useLoaderData, useRouteError } from "@remix-run/react"
+import { useLoaderData} from "@remix-run/react"
 import { getGuitar } from "~/models/guitars.server"
 import styles from '~/styles/guitars.css'
 

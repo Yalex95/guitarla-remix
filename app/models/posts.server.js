@@ -3,3 +3,9 @@ export async function getPosts(){
     const result = await res.json()
     return result
 }
+export async function getPost(url){
+    const res = await fetch(`${process.env.API_URL}/posts?filters[url]=${url}&populate=image`)
+    const result= await res.json()
+    return result
+
+}

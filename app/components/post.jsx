@@ -8,7 +8,7 @@ function Post ({post}) {
         <div className="post-container">
             <h3>{title}</h3>
             <p className="contenido">{content}</p>
-            <Link className="learn-more" to={`/post/${url}`}>Learn More</Link>
+            <Link className="learn-more" to={`/posts/${url}`}>Learn More</Link>
         </div>
     </div>
   )
